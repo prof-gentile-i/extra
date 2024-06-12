@@ -14,6 +14,32 @@ In base alla larghezza/altezza della finestra dobbiamo definire le seguenti cost
 #define CELL_HEIGHT //definisci ...
 ```
 
+## Creazione della struct Game
+Per gestire varie impostazioni del gioco utilizzeremo una struttura di nome `Game` che definiamo prima del main e che per ora ha un solo campo
+```c
+// STRUTTURE DATI
+typedef struct {
+    int quit;
+} Game;
+```c
+Sempre prima del main creiamo una variaible (globale) di nome game
+```c
+// VAR GLOBALI
+Game game = {0};
+```
+
+Inoltre prima del while degli eventi  inizializziamo una funzione di gioco
+```c
+init_game(&game);
+```
+
+la cui definizione per ora è 
+```c
+void init_game(Game *game) {
+    game->quit = 0;
+}
+```
+
 ## Renderizzazione del gioco
 Nel main è da mettere la funzione per il rendering del gioco 
 ```c
